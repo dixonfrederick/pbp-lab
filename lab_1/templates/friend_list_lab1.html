@@ -11,7 +11,13 @@
         <th>NPM</th>
         <th>DOB</th>
       </tr>
-      <!-- TODO loop from Friend model -->
+      {% for friend in friends %}
+      <tr>
+        <td>{{friend.name}}</td>
+        <td>{{friend.npm}}</td>
+        <td>{{friend.dob}}</td>
+      </tr>
+      {% endfor %}
       <!-- EXAMPLE SECTION -->
       <tr>
         <td>Asmara Nugi</td>
