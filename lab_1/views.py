@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from datetime import datetime, date
+from .models import Friend
 
 mhs_name = 'Dixon Frederick'
 curr_year = int(datetime.now().strftime("%Y"))
