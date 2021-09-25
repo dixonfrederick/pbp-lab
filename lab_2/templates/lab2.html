@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Friend List</title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>To</th>
+        <th>From</th>
+        <th>Title</th>
+        <th>Message</th>
+      </tr>
+      {% for note in notes %}
+      <tr>
+        <td>{{note.To}}</td>
+        <td>{{note.From}}</td>
+        <td>{{note.title}}</td>
+        <td>{{note.message}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
