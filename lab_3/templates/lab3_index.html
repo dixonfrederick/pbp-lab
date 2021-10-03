@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Friend List</title>
+  </head>
+  <body>
+    <table border = "2" cellpadding="10">
+      <tr>
+        <th>Name</th>
+        <th>NPM</th>
+        <th>DOB</th>
+      </tr>
+      {% for friend in friends %}
+      <tr>
+        <td>{{friend.name}}</td>
+        <td>{{friend.npm}}</td>
+        <td>{{friend.DOB}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
