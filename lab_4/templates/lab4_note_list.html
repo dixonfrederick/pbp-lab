@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>Friend List</title>
+    <style>
+      /*ref: https://www.w3schools.com/css/css_navbar.asp*/
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        background-color: #333;
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }
+      li {
+        float: left;
+      }
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        border-right: 1px solid white;
+      }
+      li a:hover:not(.active) {
+        background-color: #111;
+      }
+      .active {
+        background-color: #111;
+      }
+      /*ref: https://www.w3schools.com/howto/howto_css_column_cards.asp*/
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      /* Float four columns side by side */
+      .column {
+        float: left;
+        width: 25%;
+        padding: 0 10px;
+      }
+      /* Remove extra left and right margins, due to padding */
+      .row {margin: 0 -5px;}
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      /* Responsive columns */
+      @media screen and (max-width: 600px) {
+        .column {
+          width: 100%;
+          display: block;
+          margin-bottom: 20px;
+        }
+      }
+      /* Style the counter cards */
+      .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        padding: 16px;
+        text-align: center;
+        background-color: #f1f1f1;
+        border: 3px solid black;
+      }
+    
+    </style>
+  </head>
+  <ul>
+    <li><a href="http://localhost:8000/lab-4/">Note List</a></li>
+    <li><a href="add-note">Add Note</a></li>
+    <li><a href="note-list"; class = "active">Card Note</a></li>
+  </ul>
+  </head>
+  <body style="margin-top:52px; background-color:#04AA6D;">
+    <div class="row">
+      {% for note in notes %}
+        <div class="column">
+          <div class="card">
+            <h1>{{note.title}}</h1>
+            <p><b>To:</b> {{note.To}}</p>
+            <p><b>From:</b> {{note.From}}</p>
+            <p><b>Message:</b></p>
+            <p>{{note.message}}</p>
+          </div>
+        </div>  
+      {% endfor %}
+    </div>
+  </body>
+</html>
