@@ -22,19 +22,30 @@ class _HomeScreenState extends State<Home> {
       appBar: AppBar(title: Text("Indeks Kewaspadaan")),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: new Theme(
+        child: Theme(
           data: Theme.of(context).copyWith(
             canvasColor: Colors.blue.shade200,
           ),
-          child: DropdownButton<String>(
-            value: _currentIndexes,
-            items: indexes.map((index) {
-              return DropdownMenuItem(
-                value: index,
-                child: Text(index),
-              );
-            }).toList(),
-            onChanged: (val) => setState(() => _currentIndexes = val),
+          child: ListView(
+            children: <Widget>[
+              DropdownButtonFormField<String>(
+              value: _currentIndexes,
+              items: indexes.map((index) {
+                return DropdownMenuItem(
+                  value: index,
+                  child: Text(index),
+                );
+              }).toList(),
+              onChanged: (val) => setState(() => _currentIndexes = val),
+              ),
+              Text(
+                "\nIndeks yang ditampilkan: \n$_currentIndexes",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold),
+              ),
+            ],
           ),
         ),
       ),
